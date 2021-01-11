@@ -2,6 +2,7 @@ import { SET_MOVIES } from './types';
 
 const INITIAL_STATE = {
   movies: [],
+  nominations: 0
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
