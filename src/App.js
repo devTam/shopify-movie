@@ -16,14 +16,14 @@ import {
 import './App.css';
 import { API_CALL } from './utils';
 import { useDispatch, useSelector } from 'react-redux';
-import { setMovies } from './redux/actions';
+import { setMovies, setSearch } from './redux/actions';
 import MoviesContainer from './components/movies-container/MoviesContainer';
 
 function App() {
   const [scroll, setScroll] = useState(false);
   const [searchedTerm, setSearchedTerm] = useState('');
   const dispatch = useDispatch();
-  const nominations = useSelector(state => state.nominations)
+  const nominationCount = useSelector(state => state.nominationCount)
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -32,6 +32,7 @@ function App() {
         `http://www.omdbapi.com/?s=${searchedTerm}&type=movie&apikey=25d4ed71`
       );
       const moviesArray = data.Search;
+      dispatch(setSearch(searchedTerm));
       dispatch(setMovies(moviesArray));
     }
   };
@@ -62,7 +63,7 @@ function App() {
             <Button ml="auto" variant="link" color="#A20102" fontSize="xl">
               Nominations &nbsp;
               <Box as="sup" color="#fff">
-                {nominations}
+                {nominationCount}
               </Box>
             </Button>
           </Flex>
@@ -94,7 +95,7 @@ function App() {
           </FormControl>
         </Container>
       </Grid>
-      <MoviesContainer searchedTerm={searchedTerm}/>
+      <MoviesContainer />
     </>
   );
 }

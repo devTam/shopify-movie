@@ -1,1 +1,5 @@
 export const SET_MOVIES = 'SET_MOVIES';
+export const SET_SEARCH = 'SET_SEARCH';
+export const INC_NOMINATION = 'INC_NOMINATION';
+export const DEC_NOMINATION = 'DEC_NOMINATION';
+export const ADD_NOMINATION = 'ADD_NOMINATION';

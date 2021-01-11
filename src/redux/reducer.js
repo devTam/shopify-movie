@@ -1,8 +1,10 @@
-import { SET_MOVIES } from './types';
+import { ADD_NOMINATION, DEC_NOMINATION, INC_NOMINATION, SET_MOVIES, SET_SEARCH } from './types';
 
 const INITIAL_STATE = {
+  search: '',
   movies: [],
-  nominations: 0
+  nominationCount: 0,
+  nominated: []
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -11,7 +13,31 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         movies: action.payload,
-      };
+      }
+
+    case SET_SEARCH:
+      return {
+        ...state,
+        search: action.payload,
+      }
+
+      case INC_NOMINATION:
+        return {
+          ...state,
+          nominationCount: state.nominationCount+1
+        }
+
+      case DEC_NOMINATION:
+        return {
+          ...state,
+          nominationCount: state.nominationCount-1
+        }
+
+      case ADD_NOMINATION:
+        return {
+          ...state,
+          nominated: [...state.nominated, action.payload]
+        }
 
     default:
       return state;
