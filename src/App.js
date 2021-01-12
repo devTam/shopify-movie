@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Loader from './components/loader/Loader'
+import Loader from './components/loader/Loader';
 import { SearchIcon } from '@chakra-ui/icons';
 import {
   Box,
@@ -31,7 +31,7 @@ import MoviesContainer from './components/movies-container/MoviesContainer';
 import NominationTab from './components/nominationTab/NominationTab';
 
 function App() {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [showNominationTab, setShowNominationTab] = useState(false);
   const [searchedTerm, setSearchedTerm] = useState('');
@@ -49,7 +49,7 @@ function App() {
       const moviesArray = data.Search;
       dispatch(setSearch(searchedTerm));
       dispatch(setMovies(moviesArray));
-      setLoading(false)
+      setLoading(false);
     }
   };
 
@@ -74,26 +74,29 @@ function App() {
 
   return (
     <>
-    {
-      loading && <Loader />
-    }
+      {loading && <Loader />}
       <Box
-        bg={scroll && '#111'}
+        bg={scroll && '#121212'}
         boxShadow="base"
         pos="fixed"
         w="100%"
         zIndex={5}
       >
         <Flex alignItems="center" px="20px">
-          <Text fontWeight="bold" py="3" color="#A20102" fontSize="2xl">
+          <Text
+            fontWeight="bold"
+            py="3"
+            color="#95BF47"
+            fontSize={{ base: '1rem', md: '1.5rem', lg: '2rem' }}
+          >
             THE SHOPPIES
           </Text>
           <Button
             ml="auto"
             variant="ghost"
             colorScheme="black"
-            color="#A20102"
-            fontSize="xl"
+            color="#95BF47"
+            fontSize={{ base: '.9rem', md: '1rem', lg: '1.5rem' }}
             onClick={() => setShowNominationTab(!showNominationTab)}
           >
             Nominations&nbsp;
@@ -105,7 +108,7 @@ function App() {
       </Box>
       {showNominationTab && <NominationTab />}
       <Grid
-        bg="linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.5)),url('https://i.postimg.cc/sxZ3zFYH/black-widow-min.jpg') center center no-repeat"
+        bg="linear-gradient(to right, rgba(0,0,0,0.4), rgba(149,191,71,0.3)),url('https://i.postimg.cc/bN0mbdHj/project-power-min.jpg') center center no-repeat"
         bgSize="cover"
         placeItems="center"
         minH="100vh"
@@ -113,12 +116,12 @@ function App() {
         <Container>
           <Center>
             <Heading
-              fontSize="2xl"
+              fontSize={{ base: '1.2rem', md: '1.7rem', lg: '2rem' }}
               mb={4}
               color="#fff"
               style={{ textAlign: 'center' }}
             >
-              SEARCH AND NOMINATE YOUR FAVORITE MOVIES
+              MOVIE AWARDS FOR ENTREPRENEURS
             </Heading>
           </Center>
           <FormControl as="form">

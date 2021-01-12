@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image } from '@chakra-ui/react';
+import { Box, Button, Flex, Image, Text } from '@chakra-ui/react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useToast } from '@chakra-ui/react';
@@ -58,10 +58,10 @@ const Movie = ({ movie }) => {
   };
 
   return (
-    <Flex boxShadow="2xl" p={2}>
+    <Flex boxShadow="xl" p={2} borderRadius='10px'>
       <Box>
         <Image
-          boxSize="200px"
+          boxSize={{base: '100px', md: '120px', lg: '150px'}}
           objectFit="cover"
           src={movie.Poster}
           alt={movie.Poster}
@@ -69,15 +69,17 @@ const Movie = ({ movie }) => {
         />
       </Box>
       <Box ml={4}>
-        <h3>
-          {movie.Title} | {movie.Year}
-        </h3>
+        <Text fontSize={{base: '.8rem', md: '1rem'}}>
+          <span style={{fontWeight: 'bold'}}>{movie.Title}</span> | {movie.Year}
+        </Text>
         <Button
           id={`${movie.Title} | ${movie.Year}`}
-          bg="#A20102"
-          color="#000"
+          color="#fff"
+          fontSize={{base: '.8rem', md: '1rem'}}
+          colorScheme='green'
           fontWeight="bold"
-          mt={5}
+          borderRadius='0'
+          mt={{base: '10px'}}
           onClick={handleClick}
         >
           Nominate

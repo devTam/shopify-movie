@@ -29,25 +29,27 @@ const NominationTab = () => {
     <Box
       as="ul"
       pos="fixed"
-      top="50px"
+      top={{base: '50px', md: '60px', lg: '73px'}}
       right="20px"
       zIndex={10}
-      w="250px"
-      p={3}
+      w={{base: '150px', md: '200px'}}
+      bg='#121212'
+      color='#fff'
       fontSize="14px"
     >
       <FlipMove>
         {nominated.map((item) => (
           <Flex
             key={item}
+            boxShadow="xl"
             alignItems="center"
             borderBottom="1px"
+            fontSize={{base: '.8rem', lg:'1rem'}}
             fontWeight="bold"
-            bg="#fff"
             py={2}
             px={3}
           >
-            <li>{item}</li>
+            <li style={{ listStyle: 'none' }}>{item}</li>
             <IconButton
               size="xs"
               variant="ghost"

@@ -20,17 +20,17 @@ const MoviesContainer = () => {
   return (
     <>
       {movies.length > 0 && (
-        <Box bg="#111" color="#fff" ref={element}>
+        <Box bg="#FFF" ref={element}>
           {movies.length > 0 ? (
             <h2>
-              <Center py={4} fontSize="xl">
-                Results for "{search}"
+              <Center py={4} fontSize={{base: '1rem', md: '1.2rem', lg: '1.5rem'}}>
+                Results for&nbsp;<span style={{fontWeight: 'bold', color: 'green'}}>"{search}"</span>
               </Center>
             </h2>
           ) : (
             ''
           )}
-          <SimpleGrid minChildWidth="300px" p={9} spacing="40px" minH="30vh">
+          <SimpleGrid minChildWidth={{base: '200px', md: '300px'}} p={{base: '10px', md: '15px', lg: '30px'}} spacing={{base: '10px', md: '20px', lg: '40px'}} minH="30vh">
             {movies.map((movie) => (
               <Movie movie={movie} key={movie.imdbID} />
             ))}
