@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Loader from './components/loader/Loader'
 import { SearchIcon } from '@chakra-ui/icons';
 import {
   Box,
@@ -30,6 +31,7 @@ import MoviesContainer from './components/movies-container/MoviesContainer';
 import NominationTab from './components/nominationTab/NominationTab';
 
 function App() {
+  const [loading, setLoading] = useState(false)
   const [scroll, setScroll] = useState(false);
   const [showNominationTab, setShowNominationTab] = useState(false);
   const [searchedTerm, setSearchedTerm] = useState('');
@@ -38,6 +40,7 @@ function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleClick = async (e) => {
+    setLoading(true);
     e.preventDefault();
     if (searchedTerm) {
       const data = await API_CALL(
@@ -46,6 +49,8 @@ function App() {
       const moviesArray = data.Search;
       dispatch(setSearch(searchedTerm));
       dispatch(setMovies(moviesArray));
+      console.log(loading)
+      setLoading(false)
     }
   };
 
@@ -70,6 +75,9 @@ function App() {
 
   return (
     <>
+    {
+      loading && <Loader />
+    }
       <Box
         bg={scroll && '#111'}
         boxShadow="base"
