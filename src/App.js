@@ -147,10 +147,10 @@ function App() {
       </Grid>
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent bg='#121212' color='#fff'>
           <ModalHeader>Thanks for your nominations!</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>You have successfully nominated 5 movies</ModalBody>
+          <ModalBody mb={4} style={{color: '#95BF47'}}>You have successfully nominated 5 movies!</ModalBody>
         </ModalContent>
       </Modal>
       <MoviesContainer />

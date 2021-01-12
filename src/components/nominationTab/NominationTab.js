@@ -45,7 +45,6 @@ const NominationTab = () => {
             alignItems="center"
             borderBottom="1px"
             fontSize={{base: '.8rem', lg:'1rem'}}
-            fontWeight="bold"
             py={2}
             px={3}
           >
