@@ -54,6 +54,7 @@ const NominationTab = () => {
               size="xs"
               variant="ghost"
               ml="auto"
+              _hover={{color: '#121212', backgroundColor: '#fff'}}
               borderRadius={0}
               aria-label="Delete database"
               icon={<CloseIcon pointerEvents="none" />}
