@@ -20,6 +20,7 @@ import {
   Text,
   useDisclosure,
   Center,
+  Heading,
 } from '@chakra-ui/react';
 import './App.css';
 import { API_CALL } from './utils';
@@ -76,19 +77,19 @@ function App() {
         w="100%"
         zIndex={5}
       >
-        <Flex alignItems="center" px='20px'>
+        <Flex alignItems="center" px="20px">
           <Text fontWeight="bold" py="3" color="#A20102" fontSize="2xl">
             THE SHOPPIES
           </Text>
           <Button
             ml="auto"
             variant="ghost"
-            colorScheme='black'
+            colorScheme="black"
             color="#A20102"
             fontSize="xl"
             onClick={() => setShowNominationTab(!showNominationTab)}
           >
-            Nominations &nbsp;
+            Nominations&nbsp;
             <Box as="sup" color="#fff">
               {nominationCount}
             </Box>
@@ -103,7 +104,16 @@ function App() {
         minH="100vh"
       >
         <Container>
-          <Center><Text fontSize='2xl' mb={4} color='#fff' fontWeight='bold' style={{textAlign: 'center'}}>SEARCH AND NOMINATE YOUR FAVORITE MOVIES</Text></Center>
+          <Center>
+            <Heading
+              fontSize="2xl"
+              mb={4}
+              color="#fff"
+              style={{ textAlign: 'center' }}
+            >
+              SEARCH AND NOMINATE YOUR FAVORITE MOVIES
+            </Heading>
+          </Center>
           <FormControl as="form">
             <InputGroup size="md">
               <Input
@@ -125,7 +135,7 @@ function App() {
       </Grid>
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
-        <ModalContent >
+        <ModalContent>
           <ModalHeader>Thanks for your nominations!</ModalHeader>
           <ModalCloseButton />
           <ModalBody>You have successfully nominated 5 movies</ModalBody>

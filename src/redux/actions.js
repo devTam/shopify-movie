@@ -1,4 +1,4 @@
-import { ADD_NOMINATION, DEC_NOMINATION, INC_NOMINATION, SET_MOVIES, SET_SEARCH } from "./types";
+import { ADD_NOMINATION, DEC_NOMINATION, DEL_NOMINATION, INC_NOMINATION, SET_MOVIES, SET_SEARCH } from "./types";
 
 export const setMovies = (movies) => ({
     type: SET_MOVIES,
@@ -21,4 +21,9 @@ export const decrementNomination = () => ({
 export const addNomination = (nomination) => ({
     type: ADD_NOMINATION,
     payload: nomination
+})
+
+export const delNomination = (item) => ({
+    type: DEL_NOMINATION,
+    payload: item
 })

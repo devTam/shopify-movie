@@ -15,6 +15,7 @@ const Movie = ({ movie }) => {
 
   const dispatch = useDispatch();
   const nominationCount = useSelector((state) => state.nominationCount);
+ 
 
   const handleClick = (e) => {
     if (nominationCount < 5) {
@@ -28,24 +29,26 @@ const Movie = ({ movie }) => {
         title: 'Nomination successful!',
         description: 'The movie has been added to your nominations.',
         status: 'success',
-        duration: 5000,
+        duration: 1500,
         isClosable: true,
       });
 
       // disable nomination button
       const button = e.target;
       button.disabled = true;
+  
     } 
     else {
       toast({
         title: 'An error occured',
         description: 'You have exceeded the number of nominations',
         status: 'error',
-        duration: 5000,
+        duration: 1500,
         isClosable: true,
       });
     }
   };
+
 
   return (
     <Flex boxShadow='2xl' p={2}>
@@ -63,6 +66,7 @@ const Movie = ({ movie }) => {
           {movie.Title} | {movie.Year}
         </h3>
         <Button
+        id={`${movie.Title} | ${movie.Year}`}
           bg="#A20102"
           color="#000"
           fontWeight="bold"
