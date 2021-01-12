@@ -93,8 +93,10 @@ function App() {
           </Text>
           <Button
             ml="auto"
-            variant="ghost"
-            colorScheme="black"
+            _focus={{outline: 'none'}}
+            variant="link"
+            _hover={{textDecoration: 'none', color: '#84aa3d'}}
+            colorScheme="green"
             color="#95BF47"
             fontSize={{ base: '.9rem', md: '1rem', lg: '1.5rem' }}
             onClick={() => setShowNominationTab(!showNominationTab)}
