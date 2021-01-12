@@ -32,7 +32,7 @@ const NominationTab = () => {
       top={{base: '50px', md: '60px', lg: '73px'}}
       right="20px"
       zIndex={10}
-      w={{base: '150px', md: '200px'}}
+      w='200px'
       bg='#121212'
       color='#fff'
       fontSize="14px"
@@ -54,6 +54,7 @@ const NominationTab = () => {
               size="xs"
               variant="ghost"
               ml="auto"
+              border='1px'
               _hover={{color: '#121212', backgroundColor: '#fff'}}
               borderRadius={0}
               aria-label="Delete database"
