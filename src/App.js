@@ -49,7 +49,6 @@ function App() {
       const moviesArray = data.Search;
       dispatch(setSearch(searchedTerm));
       dispatch(setMovies(moviesArray));
-      console.log(loading)
       setLoading(false)
     }
   };
