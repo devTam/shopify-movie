@@ -44,7 +44,7 @@ function App() {
     e.preventDefault();
     if (searchedTerm) {
       const data = await API_CALL(
-        `http://www.omdbapi.com/?s=${searchedTerm}&type=movie&apikey=25d4ed71`
+        `https://www.omdbapi.com/?s=${searchedTerm}&type=movie&apikey=25d4ed71`
       );
       const moviesArray = data.Search;
       dispatch(setSearch(searchedTerm));
