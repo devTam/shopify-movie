@@ -110,7 +110,7 @@ function App() {
       </Box>
       {showNominationTab && <NominationTab />}
       <Grid
-        bg="linear-gradient(to right, rgba(0,0,0,0.4), rgba(149,191,71,0.3)),url('https://i.postimg.cc/bN0mbdHj/project-power-min.jpg') center center no-repeat"
+        bg="linear-gradient(to right, rgba(0,0,0,0.4), rgba(149,191,71,0.15)),url('https://i.postimg.cc/bN0mbdHj/project-power-min.jpg') center center no-repeat"
         bgSize="cover"
         placeItems="center"
         minH="100vh"
